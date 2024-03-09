@@ -14,10 +14,11 @@ pipeline {
 
     stages{
         stage("Hello World"){
+            steps{
             sh '''
                 echo hi
                 '''
-            
+            }
         }
     }
 
