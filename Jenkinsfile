@@ -12,6 +12,15 @@ pipeline {
         label "jenkins-ssh-agent-docker"
     }
 
+    stages{
+        stage("Hello World"){
+            sh '''
+                echo hi
+                '''
+            
+        }
+    }
+
 }
 
 
