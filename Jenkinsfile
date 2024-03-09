@@ -8,9 +8,7 @@ pipeline {
         IMAGE_TAG="${RELEASE}"+"-"+"${BUILD_NUMBER}"
     }
 
-    agent {
-        label "jenkins-ssh-agent-docker"
-    }
+  
 
     stages{
         stage("Hello World"){
