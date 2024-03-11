@@ -20,6 +20,21 @@ pipeline {
             }
 
         }
+
+    stage('SonarQube Code Analysis') {
+                    steps {
+                        dir("${WORKSPACE}"){
+                        // Run SonarQube analysis for Python
+                        script {
+                            def scannerHome = tool name: 'Sonar-Scanner'
+                            withSonarQubeEnv('sonar_token') {
+                                sh "echo $pwd"
+                                sh "${scannerHome}/bin/sonar-scanner"
+                            }
+                        }
+                    }
+                    }
+            }
         
             }
 
