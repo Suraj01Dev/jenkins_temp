@@ -18,6 +18,10 @@ pipeline {
                         sh '''
                         bash test.sh
                         '''
+
+                        sh '''
+                        whoami
+                        '''
             }
 
         }
