@@ -27,8 +27,8 @@ pipeline {
                         dir("${WORKSPACE}"){
                         // Run SonarQube analysis for Python
                         script {
-                            def scannerHome = tool name: 'Sonar-Scanner'
-                            withSonarQubeEnv('sonar_token') {
+                            def scannerHome = tool name: 'sonar_scanner'
+                            withSonarQubeEnv('sonar_server') {
                                 sh "echo $pwd"
                                 sh "${scannerHome}/bin/sonar-scanner"
                             }
