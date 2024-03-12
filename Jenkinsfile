@@ -8,8 +8,9 @@ pipeline {
         IMAGE_TAG="${RELEASE}"+"-"+"${BUILD_NUMBER}"
     }
 
-    agent any
-
+    agent {
+        label "node1"
+    }
     stages {
 
         stage('Testing Script') {
