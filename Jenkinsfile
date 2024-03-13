@@ -47,7 +47,7 @@ pipeline {
                     }
                 }
         
-        stage("Building and pushing docker"){
+        stage("Building docker"){
             steps{
 
                 sh '''
@@ -56,6 +56,25 @@ pipeline {
 
             }
         }
+        stage("Pushing docker"){
+            steps{
+                withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_pass_var')]) {
+
+                    sh '''
+                    docker login -u suraj01dev -p ${docker_pass_var}
+                    '''
+
+                    sh '''
+                    docker push ${IMAGE_NAME}:${IMAGE_TAG}
+                    '''
+                
+                        }
+
+            }
+        }
+
+
+
         
         
             }
