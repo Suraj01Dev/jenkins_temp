@@ -47,6 +47,16 @@ pipeline {
                     }
                 }
         
+        stage("Building and pushing docker"){
+            steps{
+
+                sh '''
+                docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+                '''
+
+            }
+        }
+        
         
             }
 
