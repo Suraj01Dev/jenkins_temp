@@ -61,11 +61,11 @@ pipeline {
                 withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_pass_var')]) {
 
                     sh '''
-                    docker login -u suraj01dev -p ${docker_pass_var}
+                    sudo docker login -u suraj01dev -p ${docker_pass_var}
                     '''
 
                     sh '''
-                    docker push ${IMAGE_NAME}:${IMAGE_TAG}
+                    sudo docker push ${IMAGE_NAME}:${IMAGE_TAG}
                     '''
                 
                         }
