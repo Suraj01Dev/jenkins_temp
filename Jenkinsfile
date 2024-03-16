@@ -1,6 +1,6 @@
 pipeline {
     environment{
-        APPNAME="stock_screener_ui_1"
+        APPNAME="stock_screener_ui"
         RELEASE="1.0.0"
         DOCKER_USER="suraj01dev"
         DOCKER_PASS="dockerhub"
