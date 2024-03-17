@@ -73,6 +73,15 @@ pipeline {
             }
         }
 
+        stage("Deploy in k8s"){
+            steps{
+                sshagent(['']) {
+                    sh "scp -o StrictHostKeyChecking=no pods.yaml suraj@192.168.122.2:/home/suraj"
+                }
+                    sh "ssh suraj@192.168.122.2 kubectl create -f /home/suraj/pods.yaml"
+            }
+        }
+
 
 
         
