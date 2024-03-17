@@ -13,7 +13,7 @@ pipeline {
     }
     stages {
 
-        stage('Testing Script') {
+        stage('Running the Testing Script') {
             steps {
                         sh '''
                         bash test.sh
